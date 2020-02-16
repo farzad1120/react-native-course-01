@@ -1,5 +1,5 @@
-import React from 'react'
-import {View, Text, StyleSheet, Image} from 'react-native'
+import React from 'react';
+import {View, Text, StyleSheet, Image} from 'react-native';
 
 const App = () => {
   return (
@@ -10,8 +10,8 @@ const App = () => {
         style={styles.img}
       />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -28,6 +28,6 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 50,
   },
-})
+});
 
-export default App
+export default App;
