@@ -3,20 +3,28 @@ import {View, StyleSheet, FlatList, Text} from 'react-native';
 import {uuid} from 'uuidv4';
 
 import Header from './components/Header';
+import ListItem from './components/ListItem';
 
 const App = () => {
-  const [items, setItem] = useState([
+  const [items, setItems] = useState([
     {id: uuid(), text: 'Milk'},
     {id: uuid(), text: 'Eggs'},
     {id: uuid(), text: 'Bread'},
     {id: uuid(), text: 'Juice'},
   ]);
+
+  const deleteItem = id => {
+    setItems(prevItems => prevItems.filter(item => item.id !== id));
+  };
+
   return (
     <View style={styles.container}>
       <Header />
       <FlatList
         data={items}
-        renderItem={({item}) => <Text>{item.text}</Text>}
+        renderItem={({item}) => (
+          <ListItem item={item} deleteItem={deleteItem} />
+        )}
       />
     </View>
   );
